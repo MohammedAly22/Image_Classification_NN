@@ -2,6 +2,7 @@ import pandas as pd
 import numpy as np
 
 # for data visualization
+from mlxtend.plotting import plot_learning_curves
 import seaborn as sns
 import matplotlib.pyplot as plt
 # for PCA (feature engineering)
@@ -96,4 +97,7 @@ plt.ylabel("Frequency")
 plt.title("Histogram of Radius Mean for Bening and Malignant Tumors")
 plt.show()
 sns.heatmap(cm, annot=True, fmt='.0f', cmap="PuRd")
+plt.show()
+# plot learning curve
+plot_learning_curves(X_train, y_train, X_test, y_test, svc)
 plt.show()
