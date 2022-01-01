@@ -31,15 +31,6 @@ val_generator = val_datgen.flow_from_directory(
     batch_size=20,
     class_mode='categorical'
 )
-# prepare image function
-def prepareImage(imagePath):
-    image_size = 150
-    img_array = cv.imread(imagePath)
-    img_array = cv.cvtColor(img_array, cv.COLOR_BGR2RGB)
-    new_array = cv.resize(img_array, (image_size, image_size))
-    plt.imshow(new_array)
-    plt.show()
-    return new_array.reshape(-1, image_size, image_size, 3)
 
 ############### BUILDING OUR MODEL ##################
 model = models.Sequential()
